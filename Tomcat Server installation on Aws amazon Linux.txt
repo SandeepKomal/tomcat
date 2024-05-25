@@ -1,0 +1,16 @@
+Tomcat Server installation on Amamzon Linux AWS
+
+
+
+cd /tmp
+sudo mkdir /opt/tomcat
+cd opt/tomcat
+tar -xf apache-tomcat-9.0.89.tar.gz
+sudo mv apache-tomcat-9.0.89 /opt/tomcat/
+sudo chown -R ec2-user: /opt/tomcat/
+
+sudo sh -c 'chmod +x /opt/tomcat/apache-tomcat-9.0.89/bin/*.sh'
+
+cd /opt/tomcat/apache-tomcat-9.0.89/bin
+
+./catalina.sh start
