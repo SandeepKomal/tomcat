@@ -61,3 +61,26 @@ vi ./webapps/examples/META-INF/context.xml
 vi ./webapps/host-manager/META-INF/context.xml
 vi ./webapps/manager/META-INF/context.xml
 ```
+### Update user information in tomcat-users.xml
+```
+cd apache-tomcat-9.0.55
+```
+```
+cd conf
+```
+```
+sudo vi tomcat-users.xml
+```
+#### Add below lines between <tomcat-users> tag
+
+```
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>   
+<user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+<user username="deployer" password="deployer" roles="manager-script"/>
+<user username="tomcat" password="s3cret" roles="manager-gui"/>
+```
+
+
