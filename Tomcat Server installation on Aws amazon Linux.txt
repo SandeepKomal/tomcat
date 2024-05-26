@@ -1,16 +1,13 @@
-Tomcat Server installation on Amamzon Linux AWS
+Steps to Deploy a springbootapp on Tomcat Server
 
+mvn clean package 
 
+cd target 
 
-cd /tmp
-sudo mkdir /opt/tomcat
-cd opt/tomcat
-tar -xf apache-tomcat-9.0.89.tar.gz
-sudo mv apache-tomcat-9.0.89 /opt/tomcat/
-sudo chown -R ec2-user: /opt/tomcat/
+check the artifact customer.war file in the taget folder
 
-sudo sh -c 'chmod +x /opt/tomcat/apache-tomcat-9.0.89/bin/*.sh'
+cp /root/customer/target/customer.war /opt/apache-tomcat-9.0.89/webapps/
 
-cd /opt/tomcat/apache-tomcat-9.0.89/bin
+now check the webapps folder wether the articat is copied correctly or not ---> cd /opt/apache-tomcat-9.0.89/webapps/
 
-./catalina.sh start
+http://publicip:8080/api  ----> final app 
