@@ -32,3 +32,15 @@ chmod +x startup.sh
 ```
 chmod +x shutdown.sh
 ```
+
+### Create link files for Tomcat Server up and Down
+```
+ln -s /opt/apache-tomcat-9.0.89/bin/startup.sh /usr/local/bin/tomcatup
+```
+```
+ln -s /opt/apache-tomcat-9.0.89/bin/shutdown.sh /usr/local/bin/tomcatdown
+```
+```
+tomcatup
+```
+
